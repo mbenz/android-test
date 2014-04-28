@@ -2,7 +2,24 @@
 <resources>
 
     <string name="app_name">Android Test</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="categories">
+        <item>Concerts</item>
+        <item>Festivals</item>
+        <item>Sports</item>
+        <item>aaa</item>
+        <item>bbb</item>
+        <item>ccc</item>
+        <item>ddd</item>
+    </string-array>
+
+    <string-array name="categories_concerts">
+        <item>Pop</item>
+        <item>Rock</item>
+        <item>Metal</item>
+        <item>Jazz</item>
+        <item>Electro</item>
+    </string-array>
 
 </resources>

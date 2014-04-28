@@ -3,11 +3,15 @@ package de.mb.androidtest;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
@@ -44,7 +48,7 @@ public class MainActivity extends Activity {
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
-	public static class PlaceholderFragment extends Fragment {
+	public static class PlaceholderFragment extends Fragment implements OnItemClickListener {
 
 		public PlaceholderFragment() {
 		}
@@ -52,8 +56,21 @@ public class MainActivity extends Activity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
 			return rootView;
 		}
-	}
 
+		@Override
+		public void onActivityCreated(Bundle savedInstanceState) {
+			super.onActivityCreated(savedInstanceState);
+
+			ListView categoryList = (ListView) getActivity().findViewById(R.id.categoryListView);
+			categoryList.setOnItemClickListener(this);
+		}
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			Log.i("tag", "clicked item at pos: " + position + " with id " + id);
+		}
+	}
 }
